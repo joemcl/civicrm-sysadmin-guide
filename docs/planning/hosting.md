@@ -37,7 +37,7 @@ otherwise private, non-Internet facing systems. It is also a good idea
 to research the maintenance and daily running costs of having an
 internal server, and compare it to that of using an external host.
 
-## External hosting 
+## External hosting
 
 With internal expertise you could manage the install and configuration
 in-house, but host CiviCRM with an external provider. In this instance,
@@ -68,7 +68,7 @@ CiviCRM. If they do not, there are two options available to you:
 
 ### Migrate to another host
 
-If your current host cannot accommodate CiviCRM you may want to consider migrating your CMS to a new host before installing CiviCRM. Depending on the CMS you are using, the process of moving from one host to another may be fairly straightforward. You are in a good position to transfer to another host if you can:  
+If your current host cannot accommodate CiviCRM you may want to consider migrating your CMS to a new host before installing CiviCRM. Depending on the CMS you are using, the process of moving from one host to another may be fairly straightforward. You are in a good position to transfer to another host if you can: 
 
 1.  request that your users **stop creating and updating content**
     during the migration,

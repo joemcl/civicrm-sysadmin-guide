@@ -360,7 +360,7 @@ A possible workaround for this problem is here: [http://forum.civicrm.org/index.
 
 #### Running CiviCRM crons in Aegir
 
-If you are using the [Aegir](http://www.aegirproject.org) hosting environment, with the [hosting_civicrm](http://drupal.org/project/hosting_civicrm) module, the CiviCRM cron will automatically be configured. A global default cron interval is defined in the CiviCRM cron queue settings. It is also possible to set a site-specific value. 
+If you are using the [Aegir](http://www.aegirproject.org) hosting environment, with the [hosting_civicrm](http://drupal.org/project/hosting_civicrm) module, the CiviCRM cron will automatically be configured. A global default cron interval is defined in the CiviCRM cron queue settings. It is also possible to set a site-specific value.
 
 You can also use the Drush method below to call CiviCRM cron tasks manually.
 
@@ -390,25 +390,25 @@ If you are triggering jobs using the URL method, you must manually generate a si
         ```
 
     !!! warning
-    
+   
         Make sure there that there are no **reserved or unsafe URL characters** in your site key. These include:
-        
+       
         ```
         & = + $ ? % , / : { } # | '
         ```
         and spaces.
 
 * Open your settings file - `civicrm.settings.php` - in your favorite editor and either add or edit the `CIVICRM_SITE_KEY` value.
-    
+   
     * **in Drupal** , civicrm.settings.php is located in /sites/default
     * **in Joomla,** there are 2 civicrm.settings.php files. By default these are located in site/administrator/components/com_civicrm and site/components/com_civicrm - it's important to add the same key to both files as some Joomla front-end functions rely on the key (eg, decrypting the Outbound Mail SMTP Password)
     * **in WordPress** , civicrm.settings.php is located in : For versions 4.6 and Prior `/wp-content/plugins/civicrm`. Starting in 4.7 for new installs `CONTENT-DIR/uploads/civicrm`
 
 
     Depending on which version of CiviCRM you've installed, you may have this setting in your file already with a value of _null_, or you may need to add the line. In either case, replace _null_ with the value of your key.
-    
+   
     EXAMPLE: If my generated site key value is: `3cx4aNkpQwxmM1hTMV~!B09iO6` then my settings file should look like this:
-    
+   
     ```
     define( 'CIVICRM_SITE_KEY', '3cx4aNkpQwxmM1hTMV~!B09iO6' );
     ```

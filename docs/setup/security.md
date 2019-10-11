@@ -36,7 +36,7 @@ data from one point to another.
 Note: ensure passwords used by one person across several protocols are
 different, as each carry with it varying levels of control.
 
-## Should I use SSL (Secure Sockets Layer)? 
+## Should I use SSL (Secure Sockets Layer)?
 
 ### PCI compliance
 

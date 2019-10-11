@@ -12,7 +12,7 @@
     * It is suggested to create a new database and then edit your civicrm.settings.php file to add information for the new logging database there, under CIVICRM_LOGGING_DSN. If you create a new database called mydatabase_civicrm_logging the line in civicrm.settings.php might look similar to this:
         ```php
         define( 'CIVICRM_LOGGING_DSN' , 'mysql://sqlusername:sqlpassword@localhost/mydatabase_civicrm_logging?new_link=true' );
-        
+       
         ```
 
     * _<u><b>Before creating this new database for the logging tables or turning logging on in the admin menu, be sure to make a complete backup copy of your existing database.</b></u>_
@@ -25,7 +25,7 @@
         * Class: CRM_Report_Form_Contact_LoggingSummary
 
         And these values for the Detail Report:
-        
+       
         * URL: /contact/loggingdetail
         * Class: CRM_Report_Form_Contact_LoggingDetail
 

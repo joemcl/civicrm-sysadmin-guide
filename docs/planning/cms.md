@@ -43,11 +43,11 @@ offered for each CMS.
 ## Users and Contacts
 
 Anonymous site visitors and those with a website login are
-website **Users** 
-Individuals and organisations with a CiviCRM record are **Contacts** 
+website **Users**
+Individuals and organisations with a CiviCRM record are **Contacts**
 
 
 <sup><a name="1">1</a></sup> Usage of content management systems for websites, [Link](https://w3techs.com/technologies/overview/content_management/all).
- 
+
 
 

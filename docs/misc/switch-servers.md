@@ -59,9 +59,9 @@ If you are using Joomla, Akeeba backup is a handy plugin to create complete back
         *** If copying an existing install don't skip the cache tables they will not be created automatically
         $ mysqldump -u mysql_username -p civicrm_db_name > civi_dump_file_name_of_your_choice.sql
         ```
-        
+       
         **mySQL Dump for Joomla**
-        
+       
         ```
         On the old server:
         $ mysqldump -u mysql_username -p --ignore-table=joomla_db_name.civicrm_domain \
@@ -78,20 +78,20 @@ If you are using Joomla, Akeeba backup is a handy plugin to create complete back
 
     1. Drupal: Again consider [Backup and Migrate Module](http://drupal.org/project/backup_migrate) to migrate the Drupal side.
     1. Command Line: _Substitute mysql_username, cms_db_name and dump_file_name_of_your_choice with appropriate values._**Load mySQL Dump for Drupal**
-    
+   
         ```
         On the new server:
         $ mysql -u mysql_username -p drupal_db_name < drupal_dump_file_name_of_your_choice.sql
         $ mysql -u mysql_username -p civicrm_db_name < civi_dump_file_name_of_your_choice.sql
         ```
-        
+       
         **Load mySQL Dump for Joomla**
-        
+       
         ```
         On the new server:
         $ mysql -u mysql_username -p joomla_db_name < dump_file_name_of_your_choice.sql
         ```
-    
+   
 1. Delete files with cached settings
 
     * Drupal:
@@ -100,7 +100,7 @@ If you are using Joomla, Akeeba backup is a handy plugin to create complete back
         * <drupal-root>/sites/default/files/civicrm/ConfigAndLog/Config.IDS.ini
         * <drupal-root>/sites/default/files/civicrm/ConfigAndLog/* (You can clear all the logs if you get an error about parsing XML)
         * <civicrm_custom_extension_folder>/cache/* (Only if you get errors after clearing the caches via the GUI) (See http://example.org/civicrm/admin/setting/path?reset=1 for location of custom extension folder)
-        
+       
     * Joomla:
 
         * <joomla-root>/media/civicrm/templates_c/*
@@ -113,7 +113,7 @@ If you are using Joomla, Akeeba backup is a handy plugin to create complete back
 
         * <wordpress-root>/wp-content/plugins/files/civicrm/templates_c/*
         * <wordpress-root>/wp-content/plugins/files/civicrm/ConfigAndLog/Config.IDS.ini
-        
+       
 1. Login to Drupal or to Joomla Administrator
 1. Re-enable the CiviCRM module and any other CiviCRM sub-modules.
 1. Enter the following URL in your browser to review and update directory paths and base URLs. See CiviCRM Menu: Administer >> System Settings >> Cleanup Caches and Update Paths
@@ -123,7 +123,7 @@ If you are using Joomla, Akeeba backup is a handy plugin to create complete back
     * Joomla 1.6 sites: http://example.org/administrator/index.php?option=com_civicrm&task=civicrm/admin/setting/updateConfigBackend&reset=1
     * WordPress sites: http://example.org/wp-admin/admin.php?page=CiviCRM&q=civicrm/admin/setting/updateConfigBackend&reset=1
         * Prior to 4.3.3 the WordPress implementation mistakenly drops everything after the domain in its suggestion for a new URL. The default location for a WordPress install relative to docroot would normally mean that the url should be http://example.org/wp-content/plugins/civicrm/civicrm/
-        
+       
 1. Review the recommended modified paths in the form - they should reflect the new Base Directory, Base URL, and Site name for CiviCRM.
     1. If these values do NOT look correct, then recheck the changes you made to civicrm.settings.php. If everything looks right in your civicrm.settings.php file, you may want to follow the directions for setting `config_backend` to `null` in the Troubleshooting section (below).
         * **Base Directory** - For Drupal installs, this is the absolute path to the location of the 'files' directory. For Joomla installs this is the absolute path to the location of the 'media' directory.

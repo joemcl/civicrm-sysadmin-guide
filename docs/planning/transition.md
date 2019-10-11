@@ -119,7 +119,7 @@ support implications, including:
 -   upgrading to the latest version of CiviCRM (not necessary, but
     CiviCRM is improving all the time and your users will thank you for
     the improved usability and functionality each time you upgrade)
--   upgrading the CMS 
+-   upgrading the CMS
 -   hosting
 
 ## Training
@@ -189,4 +189,4 @@ rigid plan could prevent you from reaching the best solution.
 
 ## Choosing a consultant/service provider
 
-For many projects have a trusted outside partner is very important. Outside partners are experts in CiviCRM and will listen to you to learn about your organization and how to best match your needs to CiviCRM. There are many [providers](https://civicrm.org/partners-contributors) that participate in the CiviCRM community and can help you with your implementation. 
+For many projects have a trusted outside partner is very important. Outside partners are experts in CiviCRM and will listen to you to learn about your organization and how to best match your needs to CiviCRM. There are many [providers](https://civicrm.org/partners-contributors) that participate in the CiviCRM community and can help you with your implementation.

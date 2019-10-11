@@ -20,7 +20,7 @@ INSERT INTO `civicrm_domain` (
   `description`,
   `version`,
   contact_id)
-SELECT 
+SELECT
   'site 2',
   'second test site',
   cd.version,
@@ -109,7 +109,7 @@ WordPress multi-sites do not offer multiple codebases for plugins. There is only
       $protocol = strstr('HTTPS', $_SERVER['SERVER_PROTOCOL']) ? 'https://' : 'http://';
       $url = $protocol . $_SERVER['SERVER_NAME'];
     }
-    
+   
     /**
      * CiviCRM Configuration File
      */
@@ -117,7 +117,7 @@ WordPress multi-sites do not offer multiple codebases for plugins. There is only
       if(empty($_SERVER['SERVER_NAME'])) {
         define( 'CIVICRM_DOMAIN_ID', 1 );
       }
-    
+   
       switch ($url) {
         case 'http://site1.example.org':
           define( 'CIVICRM_DOMAIN_ID', 1 );
@@ -134,7 +134,7 @@ WordPress multi-sites do not offer multiple codebases for plugins. There is only
         default:
           echo "you need to configure site : " . home_url();
        }
-    
+   
        define( 'CIVICRM_UF_BASEURL', $url );
     ```
 

@@ -58,13 +58,13 @@ The menu links in the civicrm_menu table contains URLs for the menu links. These
     ```
     TRUNCATE TABLE `<civicrm_database>`.`civicrm_menu`;
     ```
-    
+   
 * In the CiviCRM database, set the `civicrm_domain.config_backend` field to `NULL`
     ```
     UPDATE `<civicrm_database>`.`civicrm_domain` SET `config_backend` = NULL
     WHERE `civicrm_domain`.`id` = 1 LIMIT 1;
     ```
-    
+   
 * Go to **http://example.org/civicrm/menu/rebuild?reset=1&triggerRebuild=1.** This will rebuild your triggers
 
 ### Drupal table prefixes
@@ -89,7 +89,7 @@ If you're having trouble editing and/or adding users, check your WYSIWYG setting
 
 !!! tip
     You may find the CiviCRM screens do not fit comfortably on the page if you are using a fixed width Drupal theme. A solution is to use the [civicrm_theme](http://drupal.org/project/civicrm_theme) module that enables you to choose a different theme for the CiviCRM screens.
-    
+   
 
 
 ## Drupal to WordPress
@@ -107,7 +107,7 @@ If you're having trouble editing and/or adding users, check your WYSIWYG setting
 
     !!! tip
         When downloading the CiviCRM package it would be best to get the same version of the CiviCRM package for WordPress as the version you used in Drupal. If you want to upgrade to a newer version of CiviCRM, upgrade it before or after – not during – the migration.
-    
+   
      Refer to the [WordPress Installation Guide](/install/wordpress.md) for details on obtaining and setting up CiviCRM for WordPress.
 
 
@@ -160,7 +160,7 @@ The menu links in the civicrm_menu table contains URLs for the menu links. These
     ```sql
     TRUNCATE TABLE `<civicrm_database>`.`civicrm_menu`;
     ```
-    
+   
 * In the CiviCRM database, set the `civicrm_domain.config_backend` field to `NULL`
     ```sql
     UPDATE `<civicrm_database>`.`civicrm_domain`
@@ -253,16 +253,16 @@ Insert CiviCRM entries into Drupal tables that are normally done by the CiviCRM 
     ```sql
     INSERT INTO mysite_dru.blocks (
       `module`,
-      `delta`, 
-      `theme`, 
-      `status`, 
+      `delta`,
+      `theme`,
+      `status`,
       `weight`,
-      `region`, 
+      `region`,
       `custom`,
       `throttle`,
       `visibility`,
       `pages`,
-      `title`, 
+      `title`,
       `cache`)
     SELECT
       `module`,
@@ -309,7 +309,7 @@ Insert CiviCRM entries into Drupal tables that are normally done by the CiviCRM 
       `p8`,
       `p9`,
       `updated`)
-      
+     
     SELECT
       m1.menu_name,
       if(m3.mlid is null, 0, m3.mlid) as plid,
@@ -335,11 +335,11 @@ Insert CiviCRM entries into Drupal tables that are normally done by the CiviCRM 
       m1.`p8`,
       m1.`p9`,
       m1.`updated`
-    FROM `old_dru`.`menu_links` m1 
+    FROM `old_dru`.`menu_links` m1
     LEFT JOIN old_dru.menu_links m2 ON m1.plid=m2.mlid
     LEFT JOIN mysite_dru.menu_links m3 ON m2.router_path=m3.router_path
     WHERE
-      m1.router_path like '%civicrm%' AND 
+      m1.router_path like '%civicrm%' AND
       if(m1.plid, m3.mlid, TRUE);
     ```
 
@@ -367,8 +367,8 @@ Insert CiviCRM entries into Drupal tables that are normally done by the CiviCRM 
       `description`,
       `position`,
       `weight`,
-      `file`) 
-    SELECT 
+      `file`)
+    SELECT
       `path`,
       `load_functions`,
       `to_arg_functions`,
@@ -426,11 +426,11 @@ Insert CiviCRM entries into Drupal tables that are normally done by the CiviCRM 
 1. This merely inserts new roles that include Civi* perms - you may get extrras if non CiviCRM permissions have names including Civi
 
     ```sql
-    INSERT INTO mysite_dru.role (`name`) 
-    SELECT r.`name` 
-    FROM role r 
+    INSERT INTO mysite_dru.role (`name`)
+    SELECT r.`name`
+    FROM role r
     INNER JOIN permission p ON
-      r.rid=p.rid AND 
+      r.rid=p.rid AND
       perm LIKE '%Civi%'
     LEFT JOIN mysite_dru.role rn ON r.name=rn.name
     WHERE rn.name IS NULL;
@@ -494,8 +494,8 @@ Insert CiviCRM entries into Drupal tables that are normally done by the CiviCRM 
       ou.`picture`,
       ou.`init`,
       ou.`data`
-    FROM `users` ou 
-    LEFT JOIN mysite_dru.users nu ON ou.mail=nu.mail 
+    FROM `users` ou
+    LEFT JOIN mysite_dru.users nu ON ou.mail=nu.mail
     WHERE nu.mail IS NULL;
     ```
 
@@ -504,17 +504,17 @@ Insert CiviCRM entries into Drupal tables that are normally done by the CiviCRM 
     ```sql
     INSERT INTO mysite_dru.users_roles (
       uid,
-      rid) 
+      rid)
     SELECT
       nu.uid,
-      nr.rid 
+      nr.rid
     FROM old_dru.users ou
     INNER JOIN mysite_dru.users nu ON ou.mail=nu.mail
     INNER JOIN old_dru.users_roles our ON ou.uid=our.uid
     INNER JOIN old_dru.role oldr ON our.rid=oldr.rid
     INNER JOIN mysite_dru.role nr ON oldr.name=nr.name
-    LEFT JOIN mysite_dru.users_roles nur ON 
-      our.uid=nur.uid AND 
+    LEFT JOIN mysite_dru.users_roles nur ON
+      our.uid=nur.uid AND
       our.rid=nur.rid
     WHERE nur.rid IS NULL
     ```

@@ -25,7 +25,7 @@ The ["Before upgrading"](/upgrade/index.md#before-upgrading) steps describe step
 
 * `<joomla_root>/components/com_civicrm/civicrm.settings.php`
 * `<joomla_root>/administrator/components/com_civicrm/civicrm.settings.php`
-    
+   
 Copy these files to a location outside your Joomla project. You will need to restore them after upgrading.
 
 ## Install the Extension

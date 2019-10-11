@@ -20,14 +20,14 @@ All CiviCRM code and packages used by CiviCRM (such as PEAR libraries) are inclu
 * Create the `<wordpress path>/wp-content/plugins/files/` directory and ensure it is writable. CiviCRM for versions 4.6 and prior uses this directory for temporary and uploaded files.
 
     !!! information "Downloading Directly to Your Server with wget"
-    
+   
         If you have command-line access, you may prefer to download the tarball file directly to your server using wget:
-        
+       
         1. Move into WordPress's plugin directory
             ```
             $ cd /var/www/wordpress/wp-content/plugins
             ```
-        
+       
         1. wget the file (modify this line to use the current tarball file name for the version you want)
             ```
             wget https://download.civicrm.org/civicrm-x.x.x-wordpress.zip
@@ -40,7 +40,7 @@ All CiviCRM code and packages used by CiviCRM (such as PEAR libraries) are inclu
         ```
         $ cd /var/www/wordpress/wp-content/plugins
         ```
-    
+   
     1. Un-zip the file (modify this line with the actual downloaded filename)
         ```
         unzip civicrm_download_file.zip
@@ -57,14 +57,14 @@ Follow these steps to download and install the files that contain strings for la
 * Copy or ftp the tarball file to your WordPress installation's `/wp-content/plugins` directory. You may have to change the "File Permissions" setting of `/wp-content/plugins` directory to allow for "Write" Access. Just remember to change it back to default when done.
 
     !!! note "Downloading Directly to Your Server with wget"
-    
+   
         If you have command-line access, you may prefer to download the tarball file directly to your server using wget:
-    
+   
         1. Move into WordPress's modules directory and then into the civicrm subdirectory
             ```
             $ cd /var/www/wordpress/wp-content/plugins/civicrm
             ```
-    
+   
         1. wget the file (modify this line to use the current tarball file name for the version you want)
             ```
             $ wget https://download.civicrm.org/civicrm-x.x.xx-l10n.tar.gz
@@ -77,7 +77,7 @@ Follow these steps to download and install the files that contain strings for la
         ```
         $ cd /var/www/wordpress/wp-content/plugins/civicrm
         ```
-    
+   
     1. Un-tar the file (modify this line with the actual downloaded filename)
         ```
         $ tar -zxvf civicrm_download_file.tgz

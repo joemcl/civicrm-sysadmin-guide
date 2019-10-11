@@ -22,7 +22,7 @@ Before upgrading CiviCRM, follow these steps to ensure the process goes a smooth
 1. **[Backup your site](/setup/backups.md). Very important!**
 
 1. Use your backup to create a _copy_ of your site (directories and database), and ensure that this copied site works correctly. This step is important both for (a) testing that your backup/restore procedure works, and (b) allowing you to test the upgrade in a low-stakes environment.
- 
+
 1. Test the upgrade process on your _copied site_ to ensure that it succeeds.
 
 1. [Troubleshoot](/troubleshooting.md) any upgrade problems.

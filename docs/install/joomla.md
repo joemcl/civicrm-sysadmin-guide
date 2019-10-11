@@ -55,9 +55,9 @@ If the CiviCRM component does not install correctly (for example you get a blank
     php_value register_globals off
     php_value max_execution_time 600
     ```
-    
+   
     Or if you can't change the `.htaccess` file you can add a php.ini (or `.user.ini`) file in Joomla root folder or all directories, depending on your web server or hosting company.
-    
+   
     ```
     memory_limit = 128M
     register_globals = off
